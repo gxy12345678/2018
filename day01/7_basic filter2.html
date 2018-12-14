@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8" />
+ <title>...</title>
+ <style>
+	 ul{list-style:none }
+	 ul>li{
+		 float:left;
+		 border:1px solid #555;
+		 padding: 10px 20px;
+	 }
+	 $("ul>li:gt(0)").css(border-left,0)
+	 ul>li:first-child{border-radius: 4px 0 0 4px;}
+	 ul>li:last-child{border-radius: 0 4px 4px 0;}
+	 /*
+	 ul>li+li{border-left: solid 22px;}
+	 ul>li:first-child{border-radius: 4px 0 0 4px;}
+	 ul>li:last-child{border-radius: 0 4px 4px 0;}*/
+ </style>
+</head>
+<body>
+  <h1>实现按钮组效果</h1>
+  <ul>
+		<li>|</li>
+		<li>▷</li>
+		<li>||</li>
+		<li>|</li>
+	</ul>
+	<div style="clear:both"></div>
+
+	<h1>实现表格隔行变色效果</h1>
+</body>
+</html>
