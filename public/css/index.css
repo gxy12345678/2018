@@ -1,0 +1,48 @@
+
+.index-title{
+    text-align: center;
+    background: #3bb0d0;
+    color: #fff;
+    font: normal 20px Microsoft YaHei;
+}
+.index-title-price{
+    color: #f55;
+    font: bold 15px arial,sans-serif;
+}
+.index-title-h:hover{
+    border:1px solid #268fc5;
+}
+#demo>ul>li{
+    width:10px;height:10px;
+    border-radius: 50%;
+
+}
+#demo>ul>li.active{background:#0aa1ed}
+#demo>a{
+    background:rgba(0,0,0,0.5);
+    width: 5%;
+    height:20%;
+    top:40%;
+    border-radius: 5%;
+}
+.boder1{
+    border:1px solid #268fc5;
+}
+.border1{
+    border: 1px solid #e2f3f8;
+    background: #e2f3f8;
+    color: #0286a0;
+    font-size: 18px;
+    font-weight: 600;
+}
+.border2{
+    border: 1px solid #e2f3f8;
+}
+.mySize{
+    font-size: 13px;
+    color:#666;
+}
+.mySize1{
+    font-size: 17px;
+    color:#666 ;
+}
