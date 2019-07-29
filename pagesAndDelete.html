@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+			<div class="block">
+				<ul>
+					<li v-for="item in newArr" :key="item.bar" @click="liClick(item.idx)">{{item.bar}}</li>
+				</ul>
+				<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage"
+				 :page-sizes="[3, 10, 20, 30]" :page-size="pageSize" :total="total" layout="total, sizes, prev, pager, next, jumper">
+				</el-pagination>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script>
+			new Vue({
+				el: '#app',
+
+				data: {
+					currentPage: 1,
+					pageSize: 3,
+					total: null,
+					arr: [
+						{ bar: 10 },
+						{ bar: 20 },
+						{ bar: 30 },
+						{ bar: 40 },
+						{ bar: 50 },
+						{ bar: 60 },
+						{ bar: 70 },
+						{ bar: 80 },
+						{ bar: 90 },
+						{ bar: 100 },
+						{ bar: 110 },
+						{ bar: 120 },
+						{ bar: 130 },
+						{ bar: 140 },
+						{ bar: 150 },
+						{ bar: 160 },
+						{ bar: 170 },
+						{ bar: 180 }
+					],
+					newArr: []
+				},
+
+				methods: {
+					pageInit() {
+						this.total = this.arr.length;
+						var idx = 0;
+						this.arr.forEach(item => {
+							item.idx = idx;
+							idx++;
+						});
+						this.newArr = this.arr.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize);
+					},
+					handleCurrentChange(val) {
+						this.currentPage = val;
+						this.pageInit();
+					},
+					handleSizeChange(val) {
+						this.pageSize = val;
+						this.pageInit();
+					},
+					liClick(idx) {
+						this.arr.splice(idx, 1);
+						this.pageInit();
+					}
+				},
+
+				created() {
+					this.pageInit();
+				},
+
+				watch: {
+					total() {
+						if (this.total == (this.currentPage - 1) * this.pageSize && this.total != 0) {
+							this.currentPage -= 1;
+							this.pageInit();
+						};
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
