@@ -1,2 +1,3 @@
 # 2018
-学习中最重要的四个月
+
+Stronger and stronger
